@@ -1,0 +1,42 @@
+.sectionbox-container {
+  margin: 50px 150px;
+}
+
+.sectionbox-header {
+  font-weight: 700 !important;
+  font-size: 24px !important;
+}
+
+.sectionbox-name {
+  max-width: 300px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #333333;
+}
+
+.sectionbox-delete-icon {
+  color: #6c757d;
+  font-size: 24px;
+}
+
+.sectionbox-delete-icon:hover {
+  color: #f72585;
+}
+
+.form-control {
+  font-weight: 700 !important;
+  /* font-size: 24px !important; */
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: 0;
+}
+
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.add-skill-button {
+  margin-left: 25px !important;
+  background-color: #4361ee !important;
+  border-color: #4361ee !important;
+}

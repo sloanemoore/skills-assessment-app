@@ -1,0 +1,29 @@
+.skillbox-container {
+  margin: 30px;
+  margin: 25px;
+}
+
+.skillbox-name {
+  max-width: 300px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #333333;
+}
+
+.skillbox-delete-icon {
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.skillbox-delete-icon:hover {
+  color: #f72585;
+}
+
+.form-control {
+  border: 0;
+}
+
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none;
+}
