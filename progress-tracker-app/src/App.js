@@ -1,18 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import SectionBox from "./SectionBox.js";
 import Header from "./Header.js";
 
 function App() {
-  const [progressList, setProgressList] = useState([]);
+
+  const [progressList, setProgressList] = useState(() => {
+    const progressList = JSON.parse(localStorage.getItem("progressList"));
+    if (progressList) {
+      return progressList;
+    } else {
+      fetch("https://nowcodethis-skills-progress-tracker.netlify.app/data.json")
+      .then(response => response.json())
+      .then(data => data)
+      .catch(error => {
+        console.log(error);
+        return [];
+      });
+    }
+  });
+
   const [key, setKey] = useState(0);
+
+
+  useEffect(
+    () => localStorage.setItem("progressList", JSON.stringify(progressList)),
+    [progressList]
+  );
+
+  useEffect(
+    () => localStorage.setItem("key", JSON.stringify(key)),
+    [key]
+  );
 
   function handleAddSectionButtonClick() {
     const newSection = { key: key, sectionName: "", skills: [] };
     setProgressList([newSection, ...progressList]);
     setKey((prevKey) => prevKey + 1);
   }
+
 
   function handleDeleteSectionButtonClick(section) {
     const sectionKey = section.key;
