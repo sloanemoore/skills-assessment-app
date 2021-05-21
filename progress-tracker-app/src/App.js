@@ -7,24 +7,24 @@ import Header from "./Header.js";
 function App() {
 
 
-  const [progressList, setProgressList] = useState([]);
+  // const [progressList, setProgressList] = useState([]);
 
   const [key, setKey] = useState(0);
 
-  // const [progressList, setProgressList] = useState(() => {
-  //   const progressList = JSON.parse(localStorage.getItem("progressList"));
-  //   if (progressList) {
-  //     return progressList;
-  //   } else {
-  //     fetch("https://nowcodethis-skills-progress-tracker.netlify.app/data.json")
-  //     .then(response => response.json())
-  //     .then(data => data)
-  //     .catch(error => {
-  //       console.log(error);
-  //       return [];
-  //     });
-  //   }
-  // });
+  const [progressList, setProgressList] = useState(() => {
+    const progressList = JSON.parse(localStorage.getItem("progressList"));
+    if (progressList) {
+      return progressList;
+    } else {
+      fetch("https://nowcodethis-skills-progress-tracker.netlify.app/data.json")
+      .then(response => response.json())
+      .then(data => data)
+      .catch(error => {
+        console.log(error);
+        return [];
+      });
+    }
+  });
 
 
   // useEffect(
