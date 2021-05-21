@@ -27,15 +27,15 @@ function App() {
   // });
 
 
-  useEffect(
-    () => localStorage.setItem("progressList", JSON.stringify(progressList)),
-    [progressList]
-  );
+  // useEffect(
+  //   () => localStorage.setItem("progressList", JSON.stringify(progressList)),
+  //   [progressList]
+  // );
 
-  useEffect(
-    () => localStorage.setItem("key", JSON.stringify(key)),
-    [key]
-  );
+  // useEffect(
+  //   () => localStorage.setItem("key", JSON.stringify(key)),
+  //   [key]
+  // );
 
   
 
