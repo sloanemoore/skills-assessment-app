@@ -66,6 +66,7 @@ export default function SkillBox(props) {
                         onChange={(event) =>
                           handleSkillNameChange(event, skill)
                         }
+                        value={skill.skillName}
                       />
                     </InputGroup>
                   </Col>

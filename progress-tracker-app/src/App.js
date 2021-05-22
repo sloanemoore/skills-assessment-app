@@ -6,40 +6,103 @@ import Header from "./Header.js";
 
 function App() {
 
-
-  // const [progressList, setProgressList] = useState([]);
-
   const [progressList, setProgressList] = useState(() => {
     const progressList = JSON.parse(localStorage.getItem("progressList"));
     if (progressList) {
-      console.log(progressList);
       return progressList;
     } else {
-      fetch("https://nowcodethis-skills-progress-tracker.netlify.app/data.json")
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => {
-        console.log(error);
-        return [];
-      });
+      return [];
     }
   });
 
-  const [key, setKey] = useState(0);
+  useEffect(() => {
+    if (progressList.length === 0) {
+      fetch("https://raw.githubusercontent.com/sloanemoore/skills-progress-tracker-app/main/progress-tracker-app/public/data.json")
+      .then(response => response.json())
+      .then(data => {
+        console.log("progressList: ", data);
+        console.log(data["progressList"]);
+        console.log(typeof data["progressList"]);
+        console.log(Array.isArray(data["progressList"]));
+        setProgressList(data["progressList"]);
+      })
+      .catch(error => {
+        console.log(error);
+        console.log({progressList})
+        setProgressList([]);
+      });
+    } 
+  });
+
+
+  // const [progressList, setProgressList] = useState([]);
+
+  // const [progressList, setProgressList] = useState(() => {
+  //   let progressList = JSON.parse(localStorage.getItem("progressList"));
+  //   if (progressList) {
+  //     console.log(progressList);
+  //     return progressList;
+  //   } else {
+  //     fetch("https://raw.githubusercontent.com/sloanemoore/skills-progress-tracker-app/main/progress-tracker-app/public/data.json")
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log("progressList: ", data);
+  //       console.log(data["progressList"]);
+  //       progressList = data["progressList"];
+  //       // return data["progressList"]
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //       console.log({progressList})
+  //       progressList = []
+  //       // return [];
+  //     });
+  //   }
+  //   return progressList;
+  // });
+
+  // const [progressList, setProgressList] = useState(() => {
+  //   const progressList = JSON.parse(localStorage.getItem("progressList"));
+  //   if (progressList) {
+  //     return progressList;
+  //   // } else {
+  //   //   return []
+  //   // }
+  //   } else {
+  //         fetch("https://raw.githubusercontent.com/sloanemoore/skills-progress-tracker-app/main/progress-tracker-app/public/data.json")
+  //         .then(response => response.json())
+  //         .then(data => {
+  //           console.log("progressList: ", data);
+  //           console.log(data["progressList"]);
+  //           console.log(typeof data["progressList"]);
+  //           console.log(Array.isArray(data["progressList"]));
+  //           return data["progressList"];
+  //         })
+  //         .catch(error => {
+  //           console.log(error);
+  //           console.log({progressList})
+  //           return [];
+  //         });
+  //       }
+  // });
+
+  // useEffect(() => console.log("this is the progressList: ", progressList), [progressList]);
+
+  const [key, setKey] = useState(9); // you will need to change this depending on the data.json file
 
 
 
 
 
-  // useEffect(
-  //   () => localStorage.setItem("progressList", JSON.stringify(progressList)),
-  //   [progressList]
-  // );
+  useEffect(
+    () => localStorage.setItem("progressList", JSON.stringify(progressList)),
+    [progressList]
+  );
 
-  // useEffect(
-  //   () => localStorage.setItem("key", JSON.stringify(key)),
-  //   [key]
-  // );
+  useEffect(
+    () => localStorage.setItem("key", JSON.stringify(key)),
+    [key]
+  );
 
   
 

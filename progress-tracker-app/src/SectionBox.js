@@ -50,6 +50,7 @@ export default function SectionBox(props) {
                       onChange={(event) =>
                         handleSectionNameChange(event, section)
                       }
+                      value={section.sectionName}
                     />
                   </InputGroup>
                 </Col>
