@@ -18,7 +18,7 @@ export default function Circle(props) {
     if (skillLevelIncreased) {
       setSkillLevelIncreased(false);
     }
-  }, [progressList]);
+  }, [skillLevelIncreased]);
 
   const solidCircleIcon = <FontAwesomeIcon icon={faCircle} />;
 

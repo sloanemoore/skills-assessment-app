@@ -11,7 +11,7 @@ export default function Header(props) {
     <>
       <Card className="sectionbox-container">
         <Card.Header className="sectionbox-header">
-          <a href="https://nowcodethis.com/" target="_blank">
+          <a href="https://nowcodethis.com/" target="_blank" rel="noreferrer">
             <Image
               className="logo"
               src="https://nowcodethis.com/wp-content/uploads/2020/07/cropped-now_code_this_icon.png"

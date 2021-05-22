@@ -14,17 +14,19 @@ function App() {
   const [progressList, setProgressList] = useState(() => {
     const progressList = JSON.parse(localStorage.getItem("progressList"));
     if (progressList) {
+      console.log(progressList);
       return progressList;
     } else {
       fetch("https://nowcodethis-skills-progress-tracker.netlify.app/data.json")
       .then(response => response.json())
-      .then(data => data)
+      .then(data => console.log(data))
       .catch(error => {
         console.log(error);
         return [];
       });
     }
   });
+
 
 
   // useEffect(
