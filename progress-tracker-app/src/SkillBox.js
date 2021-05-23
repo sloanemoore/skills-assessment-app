@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -55,47 +56,49 @@ export default function SkillBox(props) {
     <>
       {section.skills.map((skill) => {
         return (
-          <Card key={skill.key} className="skillbox-container">
-            <Card.Body>
-              <Card.Title>
+          // <Container fluid>
+            <Card key={skill.key} className="skillbox-container mx-1">
+              <Card.Body>
+                <Card.Title>
+                  <Row>
+                    <Col>
+                      <InputGroup className="mb-3 skillbox-name">
+                        <FormControl
+                          placeholder="Enter a skill"
+                          onChange={(event) =>
+                            handleSkillNameChange(event, skill)
+                          }
+                          value={skill.skillName}
+                        />
+                      </InputGroup>
+                    </Col>
+                    <Col className="text-right">
+                      <Button
+                        variant="link"
+                        className="skillbox-delete-icon"
+                        onClick={() =>
+                          handleDeleteSkillButtonClick(section, skill)
+                        }
+                      >
+                        {deleteIcon}
+                      </Button>
+                    </Col>
+                  </Row>
+                </Card.Title>
                 <Row>
                   <Col>
-                    <InputGroup className="mb-3 skillbox-name">
-                      <FormControl
-                        placeholder="Enter a skill"
-                        onChange={(event) =>
-                          handleSkillNameChange(event, skill)
-                        }
-                        value={skill.skillName}
-                      />
-                    </InputGroup>
-                  </Col>
-                  <Col className="text-right">
-                    <Button
-                      variant="link"
-                      className="skillbox-delete-icon"
-                      onClick={() =>
-                        handleDeleteSkillButtonClick(section, skill)
-                      }
-                    >
-                      {deleteIcon}
-                    </Button>
+                    <Circle
+                      skill={skill}
+                      section={section}
+                      progressList={progressList}
+                      setProgressList={setProgressList}
+                      circleArray={circleArray}
+                    />
                   </Col>
                 </Row>
-              </Card.Title>
-              <Row>
-                <Col>
-                  <Circle
-                    skill={skill}
-                    section={section}
-                    progressList={progressList}
-                    setProgressList={setProgressList}
-                    circleArray={circleArray}
-                  />
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
+              </Card.Body>
+            </Card>
+          // </Container>
         );
       })}
     </>

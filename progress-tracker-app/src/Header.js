@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "react-bootstrap/esm/Container";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
@@ -9,6 +10,7 @@ export default function Header(props) {
 
   return (
     <>
+    <Container fluid>
       <Card className="sectionbox-container">
         <Card.Header className="sectionbox-header">
           <a href="https://nowcodethis.com/" target="_blank" rel="noreferrer">
@@ -47,6 +49,7 @@ export default function Header(props) {
           </Button>
         </Card.Body>
       </Card>
+    </Container>
     </>
   );
 }

@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
+import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,47 +40,53 @@ export default function SectionBox(props) {
     <>
       {progressList.map((section) => {
         return (
-          <Card key={section.key} className="sectionbox-container">
-            <Card.Header>
-              <Row>
-                <Col>
-                  <InputGroup className="mb-3 sectionbox-name">
-                    <FormControl
-                      className="sectionbox-header"
-                      placeholder="Enter section name"
-                      onChange={(event) =>
-                        handleSectionNameChange(event, section)
-                      }
-                      value={section.sectionName}
-                    />
-                  </InputGroup>
-                </Col>
-                <Col className="text-right">
+          <Container fluid key={section.key} >
+            <Card className="sectionbox-container">
+              <Card.Header>
+                <Row>
+                  <Col>
+                    <InputGroup className="mb-3 sectionbox-name">
+                      <FormControl
+                        className="sectionbox-header"
+                        placeholder="Enter section name"
+                        onChange={(event) =>
+                          handleSectionNameChange(event, section)
+                        }
+                        value={section.sectionName}
+                      />
+                    </InputGroup>
+                  </Col>
+                  <Col className="text-right">
+                    <Button
+                      variant="link"
+                      className="sectionbox-delete-icon"
+                      onClick={() => handleDeleteSectionButtonClick(section)}
+                    >
+                      {deleteIcon}
+                    </Button>
+                  </Col>
+                </Row>
+              </Card.Header>
+              <Card.Body>
+                <Row className="justify-content-center mx-0 row-12 row-xl-6">
+                  <SkillBox
+                    section={section}
+                    handleDeleteSkillButtonClick={handleDeleteSkillButtonClick}
+                    progressList={progressList}
+                    setProgressList={setProgressList}
+                  />
+                </Row>
+                <Row className="justify-content-center">
                   <Button
-                    variant="link"
-                    className="sectionbox-delete-icon"
-                    onClick={() => handleDeleteSectionButtonClick(section)}
+                    className="add-skill-button"
+                    onClick={() => handleAddSkillButtonClick(section)}
                   >
-                    {deleteIcon}
+                    Add a skill
                   </Button>
-                </Col>
-              </Row>
-            </Card.Header>
-            <Card.Body>
-              <SkillBox
-                section={section}
-                handleDeleteSkillButtonClick={handleDeleteSkillButtonClick}
-                progressList={progressList}
-                setProgressList={setProgressList}
-              />
-              <Button
-                className="add-skill-button"
-                onClick={() => handleAddSkillButtonClick(section)}
-              >
-                Add a skill
-              </Button>
-            </Card.Body>
-          </Card>
+                </Row>
+              </Card.Body>
+            </Card>
+          </Container>
         );
       })}
     </>
