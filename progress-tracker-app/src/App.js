@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Container from 'react-bootstrap/Container'
 import "./App.css";
 import SectionBox from "./SectionBox.js";
 import Header from "./Header.js";
@@ -166,14 +167,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleAddSectionButtonClick={handleAddSectionButtonClick} />
-      <SectionBox
-        progressList={progressList}
-        setProgressList={setProgressList}
-        handleAddSkillButtonClick={handleAddSkillButtonClick}
-        handleDeleteSectionButtonClick={handleDeleteSectionButtonClick}
-        handleDeleteSkillButtonClick={handleDeleteSkillButtonClick}
-      />
+      <Container>
+        <Header handleAddSectionButtonClick={handleAddSectionButtonClick} />
+        <SectionBox
+          progressList={progressList}
+          setProgressList={setProgressList}
+          handleAddSkillButtonClick={handleAddSkillButtonClick}
+          handleDeleteSectionButtonClick={handleDeleteSectionButtonClick}
+          handleDeleteSkillButtonClick={handleDeleteSkillButtonClick}
+        />
+      </Container>
     </div>
   );
 }
