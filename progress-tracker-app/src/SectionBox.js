@@ -44,7 +44,7 @@ export default function SectionBox(props) {
             <Card className="sectionbox-container">
               <Card.Header>
                 <Row>
-                  <Col>
+                  <Col className="col-9">
                     <InputGroup className="mb-3 sectionbox-name">
                       <FormControl
                         className="sectionbox-header"
@@ -56,7 +56,7 @@ export default function SectionBox(props) {
                       />
                     </InputGroup>
                   </Col>
-                  <Col className="text-right">
+                  <Col className="text-right col-3">
                     <Button
                       variant="link"
                       className="sectionbox-delete-icon"

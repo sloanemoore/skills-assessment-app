@@ -61,7 +61,7 @@ export default function SkillBox(props) {
               <Card.Body>
                 <Card.Title>
                   <Row>
-                    <Col>
+                    <Col className="col-9">
                       <InputGroup className="mb-3 skillbox-name">
                         <FormControl
                           placeholder="Enter a skill"
@@ -72,7 +72,7 @@ export default function SkillBox(props) {
                         />
                       </InputGroup>
                     </Col>
-                    <Col className="text-right">
+                    <Col className="text-right col-3">
                       <Button
                         variant="link"
                         className="skillbox-delete-icon"
