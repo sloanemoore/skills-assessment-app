@@ -21,7 +21,7 @@ export default function SkillBox(props) {
 
   const deleteIcon = <FontAwesomeIcon icon={faTimes} />;
 
-  const numLevels = 10;
+  const numLevels = 5;
 
   const circleArray = [...Array(numLevels).keys()];
 
@@ -57,7 +57,7 @@ export default function SkillBox(props) {
       {section.skills.map((skill) => {
         return (
           // <Container fluid>
-            <Card key={skill.key} className="skillbox-container mx-1">
+            <Card key={skill.key} className="skillbox-container mx-1 col-lg-5">
               <Card.Body>
                 <Card.Title>
                   <Row>

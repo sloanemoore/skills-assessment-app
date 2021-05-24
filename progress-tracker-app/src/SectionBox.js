@@ -67,8 +67,8 @@ export default function SectionBox(props) {
                   </Col>
                 </Row>
               </Card.Header>
-              <Card.Body>
-                <Row className="justify-content-center mx-0 row-12 row-xl-6">
+              <Card.Body className="mx-1">
+                <Row className="justify-content-center mx-0">
                   <SkillBox
                     section={section}
                     handleDeleteSkillButtonClick={handleDeleteSkillButtonClick}
