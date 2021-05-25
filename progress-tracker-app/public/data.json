@@ -1,13 +1,39 @@
 {
     "progressList": [
         {
+            "key": 0,
+            "sectionName": "Front-end web dev",
+            "skills": [
+            {
+                "key": 1,
+                "skillName": "HTML",
+                "skillLevel": 1
+            },
+            {
+                "key": 2,
+                "skillName": "CSS",
+                "skillLevel": 1
+            },
+            {
+                "key": 3,
+                "skillName": "JavaScript",
+                "skillLevel": 2
+            },
+            {
+                "key": 4,
+                "skillName": "React",
+                "skillLevel": 2
+            }
+            ]
+        },
+        {
             "key": 5,
             "sectionName": "Back-end web dev",
             "skills": [
             {
                 "key": 6,
                 "skillName": "Node",
-                "skillLevel": 1
+                "skillLevel": 0
             },
             {
                 "key": 7,
@@ -16,34 +42,39 @@
             },
             {
                 "key": 8,
-                "skillName": "MongoDB",
+                "skillName": "Python",
+                "skillLevel": 2
+            },
+            {
+                "key": 9,
+                "skillName": "SQL",
                 "skillLevel": 0
             }
             ]
         },
         {
-            "key": 0,
-            "sectionName": "Front-end web dev",
+            "key": 10,
+            "sectionName": "Soft skills",
             "skills": [
             {
-                "key": 1,
-                "skillLevel": 3,
-                "skillName": "HTML"
+                "key": 11,
+                "skillName": "Collaborative",
+                "skillLevel": 4
             },
             {
-                "key": 2,
-                "skillLevel": 2,
-                "skillName": "CSS"
+                "key": 12,
+                "skillName": "Entrepreneurial",
+                "skillLevel": 4
             },
             {
-                "key": 3,
-                "skillLevel": 4,
-                "skillName": "JavaScript"
+                "key": 13,
+                "skillName": "Lifelong learner",
+                "skillLevel": 4
             },
             {
-                "key": 4,
-                "skillLevel": 3,
-                "skillName": "React"
+                "key": 14,
+                "skillName": "Considerate",
+                "skillLevel": 4
             }
             ]
         }

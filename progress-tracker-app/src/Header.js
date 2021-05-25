@@ -27,15 +27,15 @@ export default function Header(props) {
           <p>
             It’s a well known fact that the road to becoming a software engineer
             is exciting, but not necessarily easy. As the saying goes, this is a
-            marathon, not a sprint. Even once you’ve got a job as a software
+            marathon, not a sprint. And even once you’ve got a job as a software
             engineer, there’s plenty of learning and growing to do.
           </p>
           <p>
             You're going to be learning new things every day, and sometimes it
-            will be helpful to look back and reflect on all you've accomplished.
+            will be helpful to set specific growth goals or reflect on all you've accomplished.
             This tracker is designed to help you do just that! This is a place
             where you can privately (or publicly!) celebrate your
-            accomplishments. And don't get discouraged if your progress seems
+            accomplishments and plan for the road ahead. Don't get discouraged if your progress seems
             slower than you'd like—some skills may take more time to master than
             others. But as long as you don’t give up, you'll eventually get to
             where you want to go.
@@ -45,7 +45,7 @@ export default function Header(props) {
             className="add-section-button"
             onClick={handleAddSectionButtonClick}
           >
-            Add a section
+            Add a category
           </Button>
         </Card.Body>
       </Card>
