@@ -1,6 +1,6 @@
 # Skills Progress Tracker
 
-<a href="https://nowcodethis-productivity-focus-app.netlify.app">![Skills Progress Tracker](progress-tracker-app/screenshots/now-code-this-skills-progress-tracker-2.png "Skills Progress Tracker")</a>
+<a href="https://nowcodethis-skills-progress-tracker.netlify.app/">![Skills Progress Tracker](progress-tracker-app/screenshots/now-code-this-skills-progress-tracker-2.png "Skills Progress Tracker")</a>
 
 The Skills Progress Tracker tracker is designed to help software engineers of all levels track progress toward personal growth goals and privately (or publicly!) celebrate accomplishments.
 
